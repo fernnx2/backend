@@ -6,7 +6,6 @@
 package com.edu.uesocc.ingenieria.tpi.facade;
 
 import com.edu.uesocc.ingenieria.tpi.entity.Modelo;
-import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -14,20 +13,8 @@ import javax.ejb.Local;
  * @author fer
  */
 @Local
-public interface ModeloFacadeLocal {
+public interface ModeloFacadeLocal extends InterfaceFacade<Modelo>{
 
-    void create(Modelo modelo);
-
-    void edit(Modelo modelo);
-
-    void remove(Modelo modelo);
-
-    Modelo find(Object id);
-
-    List<Modelo> findAll();
-
-    List<Modelo> findRange(int[] range);
-
-    int count();
+  
     
 }

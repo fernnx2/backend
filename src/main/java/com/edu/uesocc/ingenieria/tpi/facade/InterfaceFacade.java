@@ -5,16 +5,26 @@
  */
 package com.edu.uesocc.ingenieria.tpi.facade;
 
-import com.edu.uesocc.ingenieria.tpi.entity.Marca;
-import javax.ejb.Local;
+import java.util.List;
 
 /**
  *
  * @author fer
  */
-@Local
-public interface MarcaFacadeLocal extends InterfaceFacade<Marca>{
-
+public interface InterfaceFacade<T> {
     
+   T create(T entity);
+    
+   T edit(T entity);
+    
+   T remove(T entity);
+    
+   T find(Object a);
+    
+   List<T> findAll();
+    
+   List<T> findRange(int[] range) ;
+    
+   int count();
     
 }

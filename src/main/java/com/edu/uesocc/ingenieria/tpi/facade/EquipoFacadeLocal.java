@@ -6,7 +6,6 @@
 package com.edu.uesocc.ingenieria.tpi.facade;
 
 import com.edu.uesocc.ingenieria.tpi.entity.Equipo;
-import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -14,20 +13,7 @@ import javax.ejb.Local;
  * @author fer
  */
 @Local
-public interface EquipoFacadeLocal {
+public interface EquipoFacadeLocal extends InterfaceFacade<Equipo>{
 
-    void create(Equipo equipo);
-
-    void edit(Equipo equipo);
-
-    void remove(Equipo equipo);
-
-    Equipo find(Object id);
-
-    List<Equipo> findAll();
-
-    List<Equipo> findRange(int[] range);
-
-    int count();
     
 }

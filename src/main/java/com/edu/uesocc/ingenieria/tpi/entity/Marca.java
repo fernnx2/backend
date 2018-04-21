@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author fer
  */
 @Entity
-@Table(name = "marca", catalog = "mantenimiento", schema = "")
+@Table(name = "marca", catalog = "", schema = "")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Marca.findAll", query = "SELECT m FROM Marca m")
@@ -62,6 +62,11 @@ public class Marca implements Serializable {
     public Marca(Integer idMarca, String marca) {
         this.idMarca = idMarca;
         this.marca = marca;
+    }
+    public Marca(Integer idMarca, String marca,String descripcion) {
+        this.idMarca = idMarca;
+        this.marca = marca;
+        this.descripcion = descripcion;
     }
 
     public Integer getIdMarca() {

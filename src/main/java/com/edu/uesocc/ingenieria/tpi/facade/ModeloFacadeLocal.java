@@ -15,8 +15,6 @@ import javax.ejb.Local;
  */
 @Local
 public interface ModeloFacadeLocal extends InterfaceFacade<Modelo>{
-
-  Modelo findByName(String nombre);
   
   List<Modelo> findAllByName(String nombre);  
 }

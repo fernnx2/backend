@@ -6,8 +6,10 @@
 package service;
 
 import com.edu.uesocc.ingenieria.tpi.entity.Marca;
+import com.edu.uesocc.ingenieria.tpi.facade.MarcaFacadeLocal;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.ws.rs.Consumes;
@@ -30,6 +32,9 @@ public class MarcaFacadeREST extends AbstractFacade<Marca> {
 
     @PersistenceContext(unitName = "com.edu.uesocc.ingenieria.tpi_MantenimientoTpi_war_1.0-SNAPSHOTPU")
     private EntityManager em;
+    
+    @Inject
+    MarcaFacadeLocal mfl;
 
     public MarcaFacadeREST() {
         super(Marca.class);
@@ -69,12 +74,19 @@ public class MarcaFacadeREST extends AbstractFacade<Marca> {
         return super.findAll();
     }
 
+    
     @GET
-    @Path("{from}/{to}")
+    @Path("marca/{marca}")
     @Produces({MediaType.APPLICATION_JSON})
-    public List<Marca> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
-        return super.findRange(new int[]{from, to});
+    public Marca findByName(@PathParam("marca") String nombre){
+     if(nombre != null){
+     return this.mfl.findByName(nombre);
+     }
+     else{
+     return null;
+     }
     }
+    
 
     @GET
     @Path("count")

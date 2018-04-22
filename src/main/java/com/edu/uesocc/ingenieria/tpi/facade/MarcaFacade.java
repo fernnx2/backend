@@ -29,4 +29,9 @@ public class MarcaFacade extends AbstractFacade<Marca> implements MarcaFacadeLoc
         super(Marca.class);
     }
     
+    @Override
+    public Marca findByName(String nombre){
+    return getEntityManager().createNamedQuery("Marca.findByMarca",Marca.class).setParameter("marca",nombre).getSingleResult();
+    }
+    
 }

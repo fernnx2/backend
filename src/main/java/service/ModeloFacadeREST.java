@@ -88,12 +88,7 @@ public class ModeloFacadeREST extends AbstractFacade<Modelo> {
         return super.findAll();
     }
 
-    @GET
-    @Path("{from}/{to}")
-    @Produces({MediaType.APPLICATION_JSON})
-    public List<Modelo> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
-        return super.findRange(new int[]{from, to});
-    }
+    
 
     @GET
     @Path("count")

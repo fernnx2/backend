@@ -15,6 +15,6 @@ import javax.ejb.Local;
 @Local
 public interface MarcaFacadeLocal extends InterfaceFacade<Marca>{
 
-    
+    Marca findByName(String nombre);
     
 }

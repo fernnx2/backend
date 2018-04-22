@@ -72,7 +72,7 @@ public class ModeloFacadeTest {
         instance.create(m3);
         instance.getEntityManager().getTransaction().commit();
         Modelo expResult = m2;
-        Modelo result = instance.findByName(modelo);
+        Modelo result = instance.findAllByName(modelo).iterator().next();
         assertEquals(expResult, result);
         System.out.println("Modelo esperado" + expResult.getModelo()+ " Modelo obtenido" + result.getModelo());
         // TODO review the generated test code and remove the default call to fail.

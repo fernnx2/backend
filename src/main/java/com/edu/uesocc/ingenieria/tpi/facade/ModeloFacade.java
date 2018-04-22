@@ -30,10 +30,7 @@ public class ModeloFacade extends AbstractFacade<Modelo> implements ModeloFacade
         super(Modelo.class);
     }
     
-    @Override
-    public Modelo findByName(String modelo){
-    return this.getEntityManager().createNamedQuery("Modelo.findByModelo",Modelo.class).setParameter("modelo",modelo).getSingleResult();
-    }
+    
     
     @Override
     public List<Modelo> findAllByName(String modelo){

@@ -124,7 +124,7 @@ public class Marca implements Serializable {
 
     @Override
     public String toString() {
-        return "com.edu.uesocc.ingenieria.tpi.entity.Marca[ idMarca=" + idMarca + " ]";
+        return "Marca[ idMarca=" + idMarca + " ]";
     }
     
 }

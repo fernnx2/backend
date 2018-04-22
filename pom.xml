@@ -190,6 +190,30 @@
                     </execution>
                 </executions>
             </plugin>
+            
+            <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.6.0</version>
+            <executions>
+            <execution>
+            <phase>install</phase>
+            <goals>
+                <goal>exec</goal>
+            </goals>
+            <configuration>
+                <executable>cp</executable>
+                <arguments>
+                    <directorio>${basedir}/target/${project.build.finalName}.war</directorio>
+                    <ouputDir>${env.HOME}/Documentos/proyectosWeb/mantenimiento/v1</ouputDir>
+                </arguments>
+             </configuration>
+           </execution>
+            </executions>
+           </plugin>
+            
+            
+            
         </plugins>
     </build>
     <repositories>

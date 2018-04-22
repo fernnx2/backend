@@ -25,7 +25,7 @@ import javax.ws.rs.core.MediaType;
  * @author fer
  */
 @Stateless
-@Path("com.edu.uesocc.ingenieria.tpi.entity.detalleequipo")
+@Path("detalleequipo")
 public class DetalleEquipoFacadeREST extends AbstractFacade<DetalleEquipo> {
 
     @PersistenceContext(unitName = "com.edu.uesocc.ingenieria.tpi_MantenimientoTpi_war_1.0-SNAPSHOTPU")

@@ -119,7 +119,7 @@ public class Modelo implements Serializable {
 
     @Override
     public String toString() {
-        return "com.edu.uesocc.ingenieria.tpi.entity.Modelo[ idModelo=" + idModelo + " ]";
+        return "Modelo[ idModelo=" + idModelo + " ]";
     }
     
 }

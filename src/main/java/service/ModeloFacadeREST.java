@@ -6,8 +6,10 @@
 package service;
 
 import com.edu.uesocc.ingenieria.tpi.entity.Modelo;
+import com.edu.uesocc.ingenieria.tpi.facade.ModeloFacadeLocal;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.ws.rs.Consumes;
@@ -30,7 +32,10 @@ public class ModeloFacadeREST extends AbstractFacade<Modelo> {
 
     @PersistenceContext(unitName = "com.edu.uesocc.ingenieria.tpi_MantenimientoTpi_war_1.0-SNAPSHOTPU")
     private EntityManager em;
-
+    
+    @Inject
+    private ModeloFacadeLocal mfl;
+    
     public ModeloFacadeREST() {
         super(Modelo.class);
     }
@@ -61,6 +66,20 @@ public class ModeloFacadeREST extends AbstractFacade<Modelo> {
     public Modelo find(@PathParam("id") Integer id) {
         return super.find(id);
     }
+    
+    @GET
+    @Path("modelo/{modelo}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public List<Modelo> findByName(@PathParam("modelo") String modelo){
+        if( modelo != null) {
+        return this.mfl.findAllByName(modelo);
+        }
+        else{
+        return null;
+        }
+    
+    }
+    
 
     @GET
     @Override

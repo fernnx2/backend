@@ -207,6 +207,7 @@
                     <directorio>${basedir}/target/${project.build.finalName}.war</directorio>
                     <ouputDir>${env.HOME}/Documentos/proyectosWeb/mantenimiento/v1</ouputDir>
                 </arguments>
+               
              </configuration>
            </execution>
             </executions>

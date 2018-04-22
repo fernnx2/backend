@@ -6,6 +6,7 @@
 package com.edu.uesocc.ingenieria.tpi.facade;
 
 import com.edu.uesocc.ingenieria.tpi.entity.Modelo;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -15,6 +16,7 @@ import javax.ejb.Local;
 @Local
 public interface ModeloFacadeLocal extends InterfaceFacade<Modelo>{
 
+  Modelo findByName(String nombre);
   
-    
+  List<Modelo> findAllByName(String nombre);  
 }

@@ -6,6 +6,7 @@
 package com.edu.uesocc.ingenieria.tpi.facade;
 
 import com.edu.uesocc.ingenieria.tpi.entity.Modelo;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -29,4 +30,13 @@ public class ModeloFacade extends AbstractFacade<Modelo> implements ModeloFacade
         super(Modelo.class);
     }
     
+    @Override
+    public Modelo findByName(String modelo){
+    return this.getEntityManager().createNamedQuery("Modelo.findByModelo",Modelo.class).setParameter("modelo",modelo).getSingleResult();
+    }
+    
+    @Override
+    public List<Modelo> findAllByName(String modelo){
+    return this.getEntityManager().createNamedQuery("Modelo.findByModelo",Modelo.class).setParameter("modelo",modelo).getResultList();
+    }
 }

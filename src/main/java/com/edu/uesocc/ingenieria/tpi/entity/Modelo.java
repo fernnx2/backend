@@ -63,6 +63,12 @@ public class Modelo implements Serializable {
         this.idModelo = idModelo;
         this.modelo = modelo;
     }
+    public Modelo(Integer idModelo, String modelo,String descripcion) {
+        this.idModelo = idModelo;
+        this.modelo = modelo;
+        this.descripcion = descripcion;
+        
+    }
 
     public Integer getIdModelo() {
         return idModelo;

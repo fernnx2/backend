@@ -21,12 +21,14 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.ext.Provider;
 
 /**
  *
  * @author fer
  */
 @Stateless
+@Provider
 @Path("marca")
 public class MarcaFacadeREST extends AbstractFacade<Marca> {
 
@@ -67,6 +69,7 @@ public class MarcaFacadeREST extends AbstractFacade<Marca> {
         return super.find(id);
     }
 
+    
     @GET
     @Override
     @Produces({MediaType.APPLICATION_JSON})

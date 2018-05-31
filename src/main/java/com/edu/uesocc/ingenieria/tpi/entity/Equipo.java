@@ -49,8 +49,7 @@ public class Equipo implements Serializable {
     @Size(max = 45)
     @Column(name = "unidad", length = 45)
     private String unidad;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "equipoIdEquipo")
-    private List<DetalleEquipo> detalleEquipoList;
+   
 
     public Equipo() {
     }
@@ -88,14 +87,7 @@ public class Equipo implements Serializable {
         this.unidad = unidad;
     }
 
-    @XmlTransient
-    public List<DetalleEquipo> getDetalleEquipoList() {
-        return detalleEquipoList;
-    }
-
-    public void setDetalleEquipoList(List<DetalleEquipo> detalleEquipoList) {
-        this.detalleEquipoList = detalleEquipoList;
-    }
+   
 
     @Override
     public int hashCode() {

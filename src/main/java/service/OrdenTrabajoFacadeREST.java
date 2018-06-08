@@ -36,7 +36,16 @@ public class OrdenTrabajoFacadeREST extends AbstractFacade<OrdenTrabajo> {
     }
     
    
-
+    @GET
+    @Path("idSolicitud/{id}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public OrdenTrabajo findSolicitud(@PathParam("id") Integer id){
+    OrdenTrabajo o = (OrdenTrabajo) em.createNamedQuery("OrdenTrabajo.findByIdSolicitud").setParameter("solicitudIdSolicitud", id).getResultList().get(0);
+    return o;
+    }
+    
+    
+    
     @POST
     @Override
     @Consumes({MediaType.APPLICATION_JSON})

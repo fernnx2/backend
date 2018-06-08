@@ -41,6 +41,20 @@ public class EstadoDetalleMantenimientoFacadeREST extends AbstractFacade<EstadoD
     public EstadoDetalleMantenimiento create(EstadoDetalleMantenimiento entity) {
         return super.create(entity);
     }
+    
+    @GET
+    @Path("mantenimientoterminado")
+    @Produces({MediaType.APPLICATION_JSON})
+    public List<EstadoDetalleMantenimiento> mantenimientoTerminado(){
+    return em.createNamedQuery("EstadoDetalleMantenimiento.findByEstado").setParameter("estado", "terminado").getResultList();
+    }
+    
+    @GET
+    @Path("mantenimientonoterminado")
+    @Produces({MediaType.APPLICATION_JSON})
+    public List<EstadoDetalleMantenimiento> mantenimientoNoTerminado(){
+    return em.createNamedQuery("EstadoDetalleMantenimiento.findByEstado").setParameter("estado", "en proceso").getResultList();
+    }
 
     @PUT
     @Path("{id}")

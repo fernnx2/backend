@@ -6,6 +6,7 @@
 package service;
 
 import com.edu.uesocc.ingenieria.tpi.entity.DetalleMantenimineto;
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -34,6 +35,16 @@ public class DetalleManteniminetoFacadeREST extends AbstractFacade<DetalleManten
     public DetalleManteniminetoFacadeREST() {
         super(DetalleMantenimineto.class);
     }
+    
+    
+    
+    @GET
+    @Path("mantenimientoNoTerminado")
+    @Produces({MediaType.APPLICATION_JSON})
+    public List<DetalleMantenimineto> mantenimientoNoTerminado(){
+    return em.createNamedQuery("DetalleMantenimineto.findAll").getResultList();
+    }
+    
 
     @POST
     @Override

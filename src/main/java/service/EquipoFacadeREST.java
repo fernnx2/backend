@@ -38,8 +38,8 @@ public class EquipoFacadeREST extends AbstractFacade<Equipo> {
     @POST
     @Override
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void create(Equipo entity) {
-        super.create(entity);
+    public Equipo create(Equipo entity) {
+        return super.create(entity);
     }
 
     @PUT

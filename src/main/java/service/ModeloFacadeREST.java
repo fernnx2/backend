@@ -43,8 +43,8 @@ public class ModeloFacadeREST extends AbstractFacade<Modelo> {
     @POST
     @Override
     @Consumes({MediaType.APPLICATION_JSON})
-    public void create(Modelo entity) {
-        super.create(entity);
+    public Modelo create(Modelo entity) {
+        return super.create(entity);
     }
 
     @PUT

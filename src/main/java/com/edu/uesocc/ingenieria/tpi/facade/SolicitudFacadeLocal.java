@@ -6,7 +6,6 @@
 package com.edu.uesocc.ingenieria.tpi.facade;
 
 import com.edu.uesocc.ingenieria.tpi.entity.Solicitud;
-import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -16,5 +15,6 @@ import javax.ejb.Local;
 @Local
 public interface SolicitudFacadeLocal extends InterfaceFacade<Solicitud>{
 
+ 
     
 }

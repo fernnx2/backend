@@ -38,8 +38,8 @@ public class DetalleManteniminetoFacadeREST extends AbstractFacade<DetalleManten
     @POST
     @Override
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void create(DetalleMantenimineto entity) {
-        super.create(entity);
+    public DetalleMantenimineto create(DetalleMantenimineto entity) {
+       return super.create(entity);
     }
 
     @PUT

@@ -29,4 +29,6 @@ public class SolicitudFacade extends AbstractFacade<Solicitud> implements Solici
         super(Solicitud.class);
     }
     
+   
+    
 }

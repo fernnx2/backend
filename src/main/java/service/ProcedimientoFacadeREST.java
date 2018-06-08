@@ -38,8 +38,8 @@ public class ProcedimientoFacadeREST extends AbstractFacade<Procedimiento> {
     @POST
     @Override
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void create(Procedimiento entity) {
-        super.create(entity);
+    public Procedimiento create(Procedimiento entity) {
+        return super.create(entity);
     }
 
     @PUT

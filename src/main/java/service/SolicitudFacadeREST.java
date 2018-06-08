@@ -38,8 +38,8 @@ public class SolicitudFacadeREST extends AbstractFacade<Solicitud> {
     @POST
     @Override
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void create(Solicitud entity) {
-        super.create(entity);
+    public Solicitud create(Solicitud entity) {
+       return super.create(entity);
     }
 
     @PUT

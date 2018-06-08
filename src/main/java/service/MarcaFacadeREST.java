@@ -45,8 +45,8 @@ public class MarcaFacadeREST extends AbstractFacade<Marca> {
     @POST
     @Override
     @Consumes({MediaType.APPLICATION_JSON})
-    public void create(Marca entity) {
-        super.create(entity);
+    public Marca create(Marca entity) {
+       return super.create(entity);
     }
 
     @PUT

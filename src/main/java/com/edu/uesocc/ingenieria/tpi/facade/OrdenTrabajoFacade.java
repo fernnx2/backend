@@ -29,4 +29,6 @@ public class OrdenTrabajoFacade extends AbstractFacade<OrdenTrabajo> implements 
         super(OrdenTrabajo.class);
     }
     
+   
+    
 }

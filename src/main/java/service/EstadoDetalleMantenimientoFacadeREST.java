@@ -38,8 +38,8 @@ public class EstadoDetalleMantenimientoFacadeREST extends AbstractFacade<EstadoD
     @POST
     @Override
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void create(EstadoDetalleMantenimiento entity) {
-        super.create(entity);
+    public EstadoDetalleMantenimiento create(EstadoDetalleMantenimiento entity) {
+        return super.create(entity);
     }
 
     @PUT

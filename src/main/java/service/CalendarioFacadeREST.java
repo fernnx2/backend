@@ -38,8 +38,8 @@ public class CalendarioFacadeREST extends AbstractFacade<Calendario> {
     @POST
     @Override
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void create(Calendario entity) {
-        super.create(entity);
+    public Calendario create(Calendario entity) {
+       return super.create(entity);
     }
 
     @PUT

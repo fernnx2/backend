@@ -34,12 +34,26 @@ public class OrdenTrabajoFacadeREST extends AbstractFacade<OrdenTrabajo> {
     public OrdenTrabajoFacadeREST() {
         super(OrdenTrabajo.class);
     }
+    
+    public List<OrdenTrabajo> ordenPorSolicitud(Integer idSolicitud){
+    
+    List<OrdenTrabajo> ordenTrabajo=  em.createNamedQuery("OrdenTrabajo.findByIdSolicitud").setParameter("solicitudIdSolicitud",idSolicitud).getResultList();
+    return ordenTrabajo;
+    
+    }
+    
+    @GET
+    @Path("{id}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public OrdenTrabajo findOrdenPorSolicitud(@PathParam("id") Integer id){
+       return ordenPorSolicitud(id).get(0);
+    }
 
     @POST
     @Override
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void create(OrdenTrabajo entity) {
-        super.create(entity);
+    public OrdenTrabajo create(OrdenTrabajo entity) {
+       return super.create(entity);
     }
 
     @PUT

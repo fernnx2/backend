@@ -6,7 +6,6 @@
 package com.edu.uesocc.ingenieria.tpi.facade;
 
 import com.edu.uesocc.ingenieria.tpi.entity.OrdenTrabajo;
-
 import javax.ejb.Local;
 
 /**
@@ -16,6 +15,6 @@ import javax.ejb.Local;
 @Local
 public interface OrdenTrabajoFacadeLocal extends InterfaceFacade<OrdenTrabajo>{
 
-    
+   
     
 }

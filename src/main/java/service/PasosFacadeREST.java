@@ -38,8 +38,8 @@ public class PasosFacadeREST extends AbstractFacade<Pasos> {
     @POST
     @Override
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void create(Pasos entity) {
-        super.create(entity);
+    public Pasos create(Pasos entity) {
+       return super.create(entity);
     }
 
     @PUT

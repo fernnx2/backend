@@ -30,10 +30,18 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(service.CORSFilter.class);
+        resources.add(service.CalendarioFacadeREST.class);
         resources.add(service.DetalleEquipoFacadeREST.class);
+        resources.add(service.DetalleManteniminetoFacadeREST.class);
         resources.add(service.EquipoFacadeREST.class);
+        resources.add(service.EstadoDetalleMantenimientoFacadeREST.class);
         resources.add(service.MarcaFacadeREST.class);
         resources.add(service.ModeloFacadeREST.class);
+        resources.add(service.OrdenTrabajoFacadeREST.class);
+        resources.add(service.PasosFacadeREST.class);
+        resources.add(service.ProcedimientoFacadeREST.class);
+        resources.add(service.SolicitudFacadeREST.class);
+        resources.add(service.TipoMantenimientoFacadeREST.class);
     }
     
 }

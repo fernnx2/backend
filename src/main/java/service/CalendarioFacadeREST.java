@@ -5,7 +5,7 @@
  */
 package service;
 
-import com.edu.uesocc.ingenieria.tpi.entity.Equipo;
+import com.edu.uesocc.ingenieria.tpi.entity.Calendario;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -25,27 +25,27 @@ import javax.ws.rs.core.MediaType;
  * @author fer
  */
 @Stateless
-@Path("equipo")
-public class EquipoFacadeREST extends AbstractFacade<Equipo> {
+@Path("calendario")
+public class CalendarioFacadeREST extends AbstractFacade<Calendario> {
 
     @PersistenceContext(unitName = "com.edu.uesocc.ingenieria.tpi_MantenimientoTpi_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
-    public EquipoFacadeREST() {
-        super(Equipo.class);
+    public CalendarioFacadeREST() {
+        super(Calendario.class);
     }
 
     @POST
     @Override
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void create(Equipo entity) {
+    public void create(Calendario entity) {
         super.create(entity);
     }
 
     @PUT
     @Path("{id}")
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public void edit(@PathParam("id") Integer id, Equipo entity) {
+    public void edit(@PathParam("id") Integer id, Calendario entity) {
         super.edit(entity);
     }
 
@@ -58,21 +58,21 @@ public class EquipoFacadeREST extends AbstractFacade<Equipo> {
     @GET
     @Path("{id}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public Equipo find(@PathParam("id") Integer id) {
+    public Calendario find(@PathParam("id") Integer id) {
         return super.find(id);
     }
 
     @GET
     @Override
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public List<Equipo> findAll() {
+    public List<Calendario> findAll() {
         return super.findAll();
     }
 
     @GET
     @Path("{from}/{to}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    public List<Equipo> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
+    public List<Calendario> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }
 

@@ -6,12 +6,10 @@
 package service;
 
 import com.edu.uesocc.ingenieria.tpi.entity.OrdenTrabajo;
-import com.edu.uesocc.ingenieria.tpi.entity.Solicitud;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -36,25 +34,6 @@ public class OrdenTrabajoFacadeREST extends AbstractFacade<OrdenTrabajo> {
     public OrdenTrabajoFacadeREST() {
         super(OrdenTrabajo.class);
     }
-    
-   
-    @GET
-    @Path("idSolicitud/{id}")
-    @Produces({MediaType.APPLICATION_JSON})
-    public OrdenTrabajo findSolicitud(@PathParam("id") Integer id){
-     
-     List<OrdenTrabajo> o ;
-     o = em.createNamedQuery("OrdenTrabajo.findByIdSolicitud").setParameter("IdSolicitud", id).getResultList();
-     if(o.isEmpty()){
-     return null;
-     }
-     else{
-     return o.get(0);
-     }
-     
-     
-    }
-    
     
     
     @POST

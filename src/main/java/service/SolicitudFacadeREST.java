@@ -5,7 +5,9 @@
  */
 package service;
 
+import com.edu.uesocc.ingenieria.tpi.entity.OrdenTrabajo;
 import com.edu.uesocc.ingenieria.tpi.entity.Solicitud;
+import com.edu.uesocc.ingenieria.tpi.facade.EstadoSolicitud;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -33,6 +35,25 @@ public class SolicitudFacadeREST extends AbstractFacade<Solicitud> {
 
     public SolicitudFacadeREST() {
         super(Solicitud.class);
+    }
+    
+    @GET
+    @Path("idSolicitud/{id}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public EstadoSolicitud findSolicitud(@PathParam("id") Integer id){
+     EstadoSolicitud e= new EstadoSolicitud();
+     List<OrdenTrabajo> o ;
+     o = em.createNamedQuery("OrdenTrabajo.findByIdSolicitud").setParameter("IdSolicitud", id).getResultList();
+     if(o.isEmpty()){
+         e.setEstado("Solicitud aun No Aprobada!");
+     return e;
+     }
+     else{
+         e.setEstado("Solicitud Aprobada!");
+     return e;
+     }
+     
+     
     }
 
     @POST

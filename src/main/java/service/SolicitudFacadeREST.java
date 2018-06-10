@@ -8,6 +8,7 @@ package service;
 import com.edu.uesocc.ingenieria.tpi.entity.OrdenTrabajo;
 import com.edu.uesocc.ingenieria.tpi.entity.Solicitud;
 import com.edu.uesocc.ingenieria.tpi.facade.EstadoSolicitud;
+import com.edu.uesocc.ingenieria.tpi.facade.Ticket;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -36,6 +37,16 @@ public class SolicitudFacadeREST extends AbstractFacade<Solicitud> {
     public SolicitudFacadeREST() {
         super(Solicitud.class);
     }
+    
+    @GET
+    @Path("generarticket")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Ticket generarTicket(){
+        Ticket t = new Ticket();
+    t.setTicket(1+em.createNativeQuery("select  max(solicitud.id_solicitud) as maximo from solicitud").getResultList().get(0).hashCode());
+    return t;
+    }
+    
     
     @GET
     @Path("idSolicitud/{id}")

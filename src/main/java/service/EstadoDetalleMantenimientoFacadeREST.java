@@ -43,14 +43,14 @@ public class EstadoDetalleMantenimientoFacadeREST extends AbstractFacade<EstadoD
     }
     
     @GET
-    @Path("mantenimientoterminado")
+    @Path("estado/terminado")
     @Produces({MediaType.APPLICATION_JSON})
     public List<EstadoDetalleMantenimiento> mantenimientoTerminado(){
     return em.createNamedQuery("EstadoDetalleMantenimiento.findByEstado").setParameter("estado", "terminado").getResultList();
     }
     
     @GET
-    @Path("mantenimientonoterminado")
+    @Path("estado/noterminado")
     @Produces({MediaType.APPLICATION_JSON})
     public List<EstadoDetalleMantenimiento> mantenimientoNoTerminado(){
     return em.createNamedQuery("EstadoDetalleMantenimiento.findByEstado").setParameter("estado", "en proceso").getResultList();

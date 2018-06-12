@@ -49,8 +49,7 @@ public class TipoMantenimiento implements Serializable {
     @Size(max = 45)
     @Column(name = "observaciones", length = 45)
     private String observaciones;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipoMantenimientoIdTipoMantenimiento")
-    private List<Solicitud> solicitudList;
+    
 
     public TipoMantenimiento() {
     }
@@ -88,14 +87,7 @@ public class TipoMantenimiento implements Serializable {
         this.observaciones = observaciones;
     }
 
-    @XmlTransient
-    public List<Solicitud> getSolicitudList() {
-        return solicitudList;
-    }
-
-    public void setSolicitudList(List<Solicitud> solicitudList) {
-        this.solicitudList = solicitudList;
-    }
+    
 
     @Override
     public int hashCode() {
